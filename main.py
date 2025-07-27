@@ -35,10 +35,11 @@ def add_entry_ui():
         st.markdown(f"**Summary:** {summary}")
         st.markdown(f"**Tags:** {tags}")
 
-if st.button("Clear all entries"):
-    for key in list(st.session_state.keys()):
-        del st.session_state[key]
+
+if st.button("Clear Entries"):
+    st.session_state.clear()
     st.experimental_rerun()
+
 
 # ======= Search Entries =======
 def search_entries_ui():
