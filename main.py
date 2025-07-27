@@ -114,6 +114,10 @@ def emotional_red_flags_ui():
     else:
         st.success("✅ No repeated 'overwhelmed' mentions.")
 
+if st.button("Clear all entries"):
+    for key in st.session_state.keys():
+        del st.session_state[key]
+    st.experimental_rerun()
 
 # ======= Launch Dashboard =======
 def launch_dashboard():
