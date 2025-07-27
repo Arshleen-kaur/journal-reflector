@@ -35,6 +35,10 @@ def add_entry_ui():
         st.markdown(f"**Summary:** {summary}")
         st.markdown(f"**Tags:** {tags}")
 
+if st.button("Clear all entries"):
+    for key in list(st.session_state.keys()):
+        del st.session_state[key]
+    st.experimental_rerun()
 
 # ======= Search Entries =======
 def search_entries_ui():
@@ -114,10 +118,7 @@ def emotional_red_flags_ui():
     else:
         st.success("✅ No repeated 'overwhelmed' mentions.")
 
-if st.button("Clear all entries"):
-    for key in st.session_state.keys():
-        del st.session_state[key]
-    st.experimental_rerun()
+
 
 # ======= Launch Dashboard =======
 def launch_dashboard():
