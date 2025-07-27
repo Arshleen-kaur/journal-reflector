@@ -38,7 +38,7 @@ def add_entry_ui():
 if st.button("Clear all entries"):
     for key in list(st.session_state.keys()):
         del st.session_state[key]
-    st.experimental_rerun()
+    st.rerun()
 
 
 # ======= Search Entries =======
